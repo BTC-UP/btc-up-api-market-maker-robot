@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BtceApi", "BtceApi\BtceApi.csproj", "{266935B5-B5B2-462C-8308-20E2BD1360B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BTCUP_BOT_UI", "BTCUP_BOT_UI\BTCUP_BOT_UI.csproj", "{E35E321D-0E81-4A85-9AE9-5666C0951887}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|X64 = Debug|X64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|X64 = Release|X64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|X64.ActiveCfg = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|X64.Build.0 = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|x86.ActiveCfg = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Debug|x86.Build.0 = Debug|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|Mixed Platforms.ActiveCfg = Release|X64
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|Mixed Platforms.Build.0 = Release|X64
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|X64.ActiveCfg = Release|X64
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|X64.Build.0 = Release|X64
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|x86.ActiveCfg = Release|x86
+		{266935B5-B5B2-462C-8308-20E2BD1360B5}.Release|x86.Build.0 = Release|x86
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|X64.ActiveCfg = Debug|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|x86.ActiveCfg = Debug|x86
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Debug|x86.Build.0 = Debug|x86
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|Mixed Platforms.ActiveCfg = Release|x64
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|Mixed Platforms.Build.0 = Release|x64
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|X64.ActiveCfg = Release|x64
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|X64.Build.0 = Release|x64
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|x86.ActiveCfg = Release|x86
+		{E35E321D-0E81-4A85-9AE9-5666C0951887}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
