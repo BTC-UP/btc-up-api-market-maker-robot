@@ -1,0 +1,8 @@
+﻿<Application x:Class="BTCUP_BOT_UI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="BTCUP_BOT_UIWindow.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
