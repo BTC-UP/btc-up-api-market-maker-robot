@@ -51,6 +51,8 @@ namespace BTCUP_BOT_UI
             if ((sender as Button).Content.ToString() == "Start")
             {
                 fillGlobalVar();
+                
+                checkOrdersApi();
 
                 _timer = new DispatcherTimer();
                 _timer.Tick += new EventHandler(_timer_Elapsed);
