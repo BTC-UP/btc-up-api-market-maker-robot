@@ -23,6 +23,7 @@ using System.Web.Script.Serialization;
 using System.Globalization;
 using System.Windows.Threading;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace BTCUP_BOT_UI
@@ -140,11 +141,18 @@ namespace BTCUP_BOT_UI
             }
             catch
             {
-                lastActionLabel.Content = "Неудачная попытка авторизации\n" + DateTime.Now;
-                Log("\nНеудачная попытка авторизации");
-                errLabel.Content = DateTime.Now + "\n" + response;
-                Log(response + "\n");
-                return;
+                if (response.Contains("Нет данных"))
+                {
+                    return;
+                }
+                else
+                {
+                    lastActionLabel.Content = "Неудачная попытка авторизации\n" + DateTime.Now;
+                    Log("\nНеудачная попытка авторизации");
+                    errLabel.Content = DateTime.Now + "\n" + response;
+                    Log(response + "\n");
+                    return;
+                }
             }
 
             decimal minusmodSell = 1m - minusRateSell;
@@ -205,36 +213,51 @@ namespace BTCUP_BOT_UI
 
             decimal rubAmount = Decimal.Parse(responseDict1["Rub"] as string, CultureInfo.InvariantCulture);
             decimal btcAmount = Decimal.Parse(responseDict1["Btc"] as string, CultureInfo.InvariantCulture);
+            double percentInOrdersRub;
+            double percentInOrdersBtc;
 
-
-            double percentInOrders = (double)(orderSumRub / (rubAmount + orderSumRub));
-
-            if (percentInOrders > maxBlockedFinances)
+            if ((rubAmount + orderSumRub) == 0)
             {
                 blockRub = true;
             }
             else
             {
-                blockRub = false;
-            }
-            double percentInOrders1 = (double)(orderSumBtc / (btcAmount + orderSumBtc));
+                percentInOrdersRub = (double)(orderSumRub / (rubAmount + orderSumRub));
 
-            if (percentInOrders1 > maxBlockedFinances)
+                if (percentInOrdersRub > maxBlockedFinances)
+                {
+                    blockRub = true;
+                }
+                else
+                {
+                    blockRub = false;
+                }
+
+            }
+
+            if ((btcAmount + orderSumBtc) == 0)
             {
                 blockBtc = true;
             }
             else
             {
-                blockBtc = false;
+                percentInOrdersBtc = (double)(orderSumBtc / (btcAmount + orderSumBtc));
+
+                if (percentInOrdersBtc > maxBlockedFinances)
+                {
+                    blockBtc = true;
+                }
+                else
+                {
+                    blockBtc = false;
+                }
+
             }
-
-
-                
 
             foreach (string idToCancel in ordersToCancel)
             {
                 nonce = r.Next(int.MinValue, int.MaxValue);
-
+                
                 dict = new Dictionary<string, string>()
                 {
                     { "nonce", nonce.ToString() },
@@ -258,14 +281,14 @@ namespace BTCUP_BOT_UI
                 }
             }
 
-            
+
             }
-            catch(Exception ex)
-            { 
-                    lastActionLabel.Content = "ошибка " + ex.Message + "\n" + DateTime.Now;
-                    Log("\nошибка " + ex.Message);
-                    errLabel.Content = DateTime.Now + "\n" + ex.Message;
-                    Log(ex.Message + "\n");
+            catch (Exception ex)
+            {
+                lastActionLabel.Content = "ошибка " + ex.Message + "\n" + DateTime.Now;
+                Log("\nошибка " + ex.Message);
+                errLabel.Content = DateTime.Now + "\n" + ex.Message;
+                Log(ex.Message + "\n");
             }
 
         }
@@ -443,6 +466,7 @@ namespace BTCUP_BOT_UI
             var reqStream = request.GetRequestStream();
             reqStream.Write(data, 0, data.Length);
             reqStream.Close();
+            Thread.Sleep(1050);
             return new StreamReader(request.GetResponse().GetResponseStream()).ReadToEnd();
         }
 
